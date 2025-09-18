@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/* =============== Globals ============== */
+* {
+  font-family: "bricolage grotesque", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --blue: #1d62ec;
+    --blue2: #04009a;
+    --white: #fff;
+    --white2: #ffffffea;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --hover-color: #f0f0f0;
+    --hover-blue: #0446c8;
+    --active-color: #e0e0e0;
+    --primary: #3498db;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --purple:rgb(180, 10, 180);
+    --green:rgb(0, 147, 140);
+    --yellow:rgb(255, 168, 6);
+    --red2: #e74d3c7c;
+    --green2:rgba(0, 147, 140, 0.634);
+    
+}
+
+
+
+/* =============== Global Styles ============== */
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* =============== Navigation ============== */
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--blue);
+  
+  transition: 0.5s;
+  overflow: hidden;
+  font-weight: 300;
+  font-size: larger;
+  z-index: 100;
+}
+.navigation.active {
+  width: 60px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  transition: transform 0.3s ease;
+}
+
+.navigation ul li.down{
+  top: 20em;
+}
+.navigation ul li:hover {
+  background-color: var(--white2);
+  font-weight: 700;
+  border-left: 10px solid var(--blue);
+  transition: 0.2s ease;
+  border-right: 7px solid var(--white);
+  
+}
+ .navigation ul li.active {
+  background-color: var(--white);
+  font-weight: 700;
+}
+.navigation ul li:hover a,
+.navigation ul li.active a {
+  color: var(--blue);
+}
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--blue);
+  transform: scale(1.05);
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+
+
+
+/* =============== Main Layout ============== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 60px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  z-index: 99;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+  cursor: pointer;
+  color: var(--blue);
+}
+
+
+.search {
+  position: relative;
+  width: 500px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2rem;
+}
+.search:hover{
+  border: 1px solid var(--black1);
+  border-radius: 40px;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ====================== Tooltip ========================== */
+.sidebar-tooltip {
+    position: fixed;
+    left: 70px; 
+    top: 0;
+    z-index: 9999;
+    background: var(--blue);
+    color: #fff;
+    padding: 6px 16px;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(33,54,243,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, top 0.2s;
+    white-space: nowrap;
+}
+.sidebar-tooltip.active {
+    opacity: 1;
+}
+
+/* ======================= Page Header ====================== */
+.page-header {
+    padding: 20px 30px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray);
+}
+
+.page-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--hover-blue);
+    margin-bottom: 5px;
+}
+
+.page-description {
+    font-size: 20px;
+    color: var(--hover-blue);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--gray);
+}
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .search {
+    width: 300px;
+  } 
+}
+
+@media (max-width: 480px) {
+  .search {
+    width: 200px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
+
+
+
+/* ============================================================================================ About Page ============== */
+.about-content {
+    /* About content styles */
+}
+
+.about-team {
+    /* About team styles */
+}
+
+/* =============== Responsive Design ============== */
+@media (max-width: 1024px) {
+    /* Tablet styles */
+}
+
+@media (max-width: 768px) {
+    /* Mobile styles */
+}
+
+/* =============== Utility Classes ============== */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}

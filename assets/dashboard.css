@@ -5,31 +5,41 @@
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
+  grid-gap: 15px;
+ 
 }
 
 .cardBox .card {
   position: relative;
   background: var(--white);
-  padding: 30px;
+  padding: 20px;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  top:-10px;
+  left: -10px;
+  bottom: 0;
+}
+
+body.dark-theme .cardBox .card{
+  background: var(--dark-black2);
+  box-shadow: 2px 4px var(--dark-blue);
 }
 
 .quick-actions{
-  gap: 60px;
+  gap: 20px;
   grid-template-columns: repeat(3, 1fr);
-  padding: 40px;
+  top:-30px;
+  
   
 }
 .cardBox .card.actions {
   position: relative;
   background: var(--white);
-  padding: 20px;
+  padding: 10px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -37,40 +47,62 @@
   align-items: center;
   cursor: pointer;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+ 
+
 }
+body.dark-theme .cardBox .card.actions{
+  box-shadow: 2px 6px var(--dark-blue);
+}
+
 .cardBox .card .numbers {
   position: relative;
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 1.9rem;
 }
 
 .cardBox .card .numbers.actions {
   position: relative;
   font-weight: 500;
-  font-size: 2.2rem;
+  font-size: 1.7rem;
   color: var(--hover-blue);
 }
+
+body.dark-theme .cardBox .card .numbers.actions {
+  color: var(--white);
+}
 .cardBox .card .iconBx.actions {
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: var(--black2);
   
 }
 .cardBox .card .cardName {
   color: var(--black2);
-  font-size: 1.1rem;
+  font-size: small;
   margin-top: 5px;
+}
+.cardBox .card .cardName.actions{
+  justify-content:center;
+  align-items: center;
+  left: 10px;
+}
+body.dark-theme .cardBox .card .cardName {
+  color: var(--white);
+  
 }
 
 .cardBox .card .iconBx {
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: var(--black2);
 }
 
 .cardBox .card:hover {
   background: var(--blue);
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
+body.dark-theme .cardBox .card:hover {
+ box-shadow: 2px 4px var(--white);
+}
+
 .cardBox .card:hover .numbers,
 .cardBox .card:hover .cardName,
 .cardBox .card:hover .iconBx {
@@ -98,7 +130,15 @@
 .cardBox .card.people .numbers{
  color: var(--blue2);
 }
+body.dark-theme .cardBox .card.people .numbers{
+ color: var(--bg-blue);
+}
+
+
 .cardBox .card.people:hover .numbers{
+ color: var(--white);
+}
+body.dark-theme .cardBox .card.people:hover .numbers{
  color: var(--white);
 }
 .cardBox .card.inactive .iconBx{
@@ -116,6 +156,9 @@
 .cardBox .card.people:hover .iconBx{
  color: var(--white);
 }
+body.dark-theme .cardBox .card.people:hover .iconBx{
+ color: var(--white);
+}
 .cardBox .card.active .iconBx{
  color: var(--success);
 }
@@ -124,6 +167,9 @@
 }
 .cardBox .card.people .iconBx{
  color: var(--blue2);
+}
+body.dark-theme .cardBox .card.people .iconBx{
+ color: var(--bg-blue);
 }
 .cardBox.quick-actions .card .iconBx.actions.done{
  color: var(--green);
@@ -141,11 +187,12 @@
 .details {
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-gap: 30px;
-  /* margin-top: 10px; */
+  grid-gap: 10px;
+  margin-top: -50px;              
+  
 }
 
 .details .recentStudents {
@@ -157,36 +204,51 @@
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
+body.dark-theme .details .recentStudents {
+  background: var(--dark-black2);
+  box-shadow: 0 -4px var(--dark-blue);
+}
 
 .details .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
-.cardHeader h2 {
+body.dark-theme .cardHeader h3{
+  color: var(--white);
+}
+.cardHeader h3 {
   font-weight: 600;
   color: var(--hover-blue);
 }
+
 .cardHeader .btn {
   position: relative;
-  padding: 5px 10px;
+  padding: 4px 8px;
   background: var(--blue);
   text-decoration: none;
   color: var(--white);
   border-radius: 6px;
 }
+body.dark-theme .cardHeader .btn {
+   background: var(--blue2);
+}
 
 .details table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: -38px;
 }
 .details table thead td {
-  font-weight: 600;
+  font-weight: bold;
 }
 .details .recentStudents table tr {
   color: var(--black1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: small;
+}
+body.dark-theme .details .recentStudents table tr {
+  color: var(--white);
 }
 .details  .recentStudents table tr:last-child {
   border-bottom: none;
@@ -195,6 +257,11 @@
   background: var(--blue);
   color: var(--white);
 }
+body.dark-theme .details .recentStudents table tbody tr:hover {
+  background: var(--blue2);
+  color: var(--white);
+}
+
 .details .recentStudents table tr td {
   padding: 10px;
 }
@@ -249,6 +316,10 @@
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
+body.dark-theme .schoolGrid{
+  background: var(--dark-black2);
+  box-shadow: 0 -4px var(--dark-blue);
+}
 .schoolGrid .imgBx {
   position: relative;
   width: 40px;
@@ -265,19 +336,23 @@
   object-fit: cover;
 }
 .schoolGrid table tr td {
-  padding: 12px 10px;
+  padding: 12px 8px;
 }
 .schoolGrid table tr td h4 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.2rem;
 }
 .schoolGrid table tr td h4 span {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--black2);
 }
 .schoolGrid table tr:hover {
   background: var(--blue);
+  color: var(--white);
+}
+body.dark-theme .schoolGrid table tr:hover {
+  background: var(--blue2);
   color: var(--white);
 }
 .schoolGrid table tr:hover td h4 span {

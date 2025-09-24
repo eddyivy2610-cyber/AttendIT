@@ -72,7 +72,7 @@
                 </li>
 
                 <li class="down">
-                    <a href="#" data-tooltip="Settings" >
+                    <a href="#" data-tooltip="Settings" data-page="settings">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
@@ -93,6 +93,7 @@
 
         <!-- Main Content Area -->
         <main class="main">
+            
             <!-- Topbar -->
             <div class="topbar">
                 <div class="toggle">
@@ -217,7 +218,7 @@
                     <div class="details">
                         <div class="recentStudents">
                             <div class="cardHeader">
-                                <h2>Status</h2>
+                                <h3>Status</h3>
                                 <a href="#" class="btn">View All</a>
                             </div>
 
@@ -294,7 +295,7 @@
                         <!-- ================= Schools Activity ================ -->
                         <div class="schoolGrid">
                             <div class="cardHeader">
-                                <h2>Institution Overview</h2>
+                                <h3>Institution Overview</h3>
                             </div>
 
                             <table>
@@ -790,28 +791,28 @@
                 <div id="attendance-page" class="page-content">
                     <!-- Attendance Summary Cards -->
                     <div class="attendance-summary">
-                        <div class="summary-card present" style="color: var(--success);">
+                        <div class="summary-card present" >
                             <i class="fas fa-user-check"></i>
                             <div>
                                 <h3>2</h3>
                                 <p>Present</p>
                             </div>
                         </div>
-                        <div class="summary-card absent"  style="color: var(--danger);">
+                        <div class="summary-card absent">
                             <i class="fas fa-user-times"></i>
                             <div>
                                 <h3>1</h3>
                                 <p>Absent</p>
                             </div>
                         </div>
-                        <div class="summary-card late" style="color: var(--warning);">
+                        <div class="summary-card late">
                             <i class="fas fa-user-clock"></i>
                             <div>
                                 <h3>0</h3>
                                 <p>Late</p>
                             </div>
                         </div>
-                        <div class="summary-card expected" style="color: var(--blue2);">
+                        <div class="summary-card expected">
                             <i class="fas fa-users"></i>
                             <div>
                                 <h3>6</h3>
@@ -830,7 +831,7 @@
                             </div>
                         </div>
                         <table class="students-table">
-                            <thead>
+                            <thead >
                                 <tr>
                                     <th>S/N</th>
                                     <th>Image</th>
@@ -933,12 +934,16 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="submit-attendance-container">
+                            <button id="submit-attendance-btn" class="btn btn-submit">
+                            <i class="fas fa-paper-plane"></i> Submit Attendance Report
+                            </button>
+                        </div>      
                     </div>  
                 </div>
 
                 <!-- Reports Content -->
                 <div id="reports-page" class="page-content" style="display: none;">
-                    <!-- Reports content will be loaded here -->
                     <div class="content-wrapper">
                         <!-- Main Content Area -->
                         <div class="main-content">

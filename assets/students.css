@@ -2,10 +2,20 @@
     background: var(--white);
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    padding: 20px;
+    padding: 12px;
     margin-bottom: 20px;
+    top:-20px;
 }
-
+body.dark-theme .filter-section{
+    background:var(--dark-black2);
+    box-shadow: 0 -4px var(--dark-blue);
+}
+body.dark-theme .content{
+    background: var(--dark-black2);
+}
+.content{
+    background: var(--bg-blue);
+}
 .filter-header {
     display: flex;
     justify-content: space-between;
@@ -14,9 +24,12 @@
 }
 
 .filter-title {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--black1);
+}
+body.dark-theme .filter-title{
+    color: var(--white);
 }
 
 .filter-actions {
@@ -42,8 +55,11 @@
     font-weight: 500;
     color: var(--black1);
 }
+body.dark-theme .filter-label{
+    color:var(--white);
+}
 
-.filter-input, .filter-select {
+.filter-select {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--black2);
@@ -52,9 +68,17 @@
     outline: none;
     transition: border-color 0.3s;
 }
+body.dark-theme .filter-select{
+    background: var(--dark-blue2);
+    border: none;
+    color: var(--white);
+}
 
-.filter-input:focus, .filter-select:focus {
-    border-color: var(--primary);
+.filter-select:focus {
+    border-color: var(--blue);
+}
+body.dark-theme .filter-select:focus{
+    background: var(--dark-blue);
 }
 
 .view-toggle {
@@ -65,7 +89,7 @@
 }
 
 .view-btn {
-    padding: 8px 15px;
+    padding: 9px 9px;
     background: none;
     border: none;
     cursor: pointer;
@@ -78,23 +102,28 @@
 }
 
 .export-btn {
-    background-color: var(--blue);
+    background: var(--blue) !important;
     color: var(--white);
     border: none;
-    padding: 8px 15px;
+    padding: 8px 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: small !important;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
     transition: background-color 0.3s;
+}
+body.dark-theme .export-btn{
+    background-color: var(--dark-blue2);
 }
 
 .export-btn:hover {
-    background-color: var(--hover-blue);
+    background-color: var(--hover-blue) !important;
 }
-
+body.dark-theme .export-btn:hover {
+    background-color: var(--dark-blue);
+}
 /* Year Pagination */
 .year-pagination {
     display: flex;
@@ -102,6 +131,7 @@
     margin-bottom: 20px;
     overflow-x: auto;
     padding-bottom: 5px;
+    
 }
 
 .year-pagination::-webkit-scrollbar {
@@ -109,7 +139,7 @@
 }
 
 .year-pagination::-webkit-scrollbar-track {
-    background: var(--gray);
+    background: var(--blue);
 }
 
 .year-pagination::-webkit-scrollbar-thumb {
@@ -118,15 +148,24 @@
 }
 
 .year-btn {
-    padding: 8px 15px;
+    padding: 5px 10px;
     background-color: var(--white);
     border: 1px solid var(--black2);
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
     white-space: nowrap;
+    font-size:small;
 }
+body.dark-theme .year-btn{
+    background: var(--black);
+    border: 1px solid var(--dark-blue2);
+    color:var(--white)
 
+}
+body.dark-theme .year-btn.active{
+   background-color: var(--hover-blue);
+}
 .year-btn.active {
     background-color: var(--hover-blue);
     color: var(--white);
@@ -146,6 +185,9 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     overflow: hidden;
 }
+body.dark-theme .students-container{
+    background: var(--dark-black2);
+}
 
 .students-header {
     padding: 15px 20px;
@@ -154,12 +196,20 @@
     justify-content: space-between;
     align-items: center;
 }
+body.dark-theme .students-header{
+    background: var(--dark-black);
+    border-bottom: 1px solid var(--dark-blue);
+}
+
 
 .students-count {
     font-size: 14px;
     color: var(--black2);
 }
-
+body.dark-theme .students-count {
+    font-size: 14px;
+    color: var(--white);
+}
 .students-list {
     overflow-y: auto;
     max-height: calc(100vh - 400px);
@@ -179,10 +229,17 @@
     border-bottom: 1px solid var(--gray);
     transition: transform 0.2s, background-color 0.2s;
 }
-
+body.dark-theme .student-row{
+    border-bottom: 1px solid var(--dark-black);
+    color: var(--white);
+}
 .student-row:hover {
     transform: scale(1.02);
     background-color: var(--hover-color);
+}
+body.dark-theme .student-row:hover{
+    background-color: var(--dark-black2);
+    border-top: 2px solid var(--white);
 }
 
 .student-card {
@@ -199,8 +256,8 @@
 }
 
 .student-photo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 15px;
@@ -220,10 +277,11 @@
     font-weight: 600;
     margin-bottom: 5px;
     color: var(--black1);
+    font-size: 14px;
 }
 
 .student-details {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--black2);
     margin-bottom: 3px;
 }
@@ -241,7 +299,7 @@
 
 .status-active {
     background-color: #d4edda;
-    color: #155724;
+    color: #10912e;
 }
 
 .status-inactive {
@@ -255,8 +313,8 @@
 }
 
 .action-btn {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: var(--gray);
     border: none;
@@ -267,6 +325,9 @@
     cursor: pointer;
     transition: all 0.3s;
     position: relative;
+}
+body.dark-theme .action-btn{
+    background-color: var(--dark-blue2);
 }
 
 .action-btn:hover {
@@ -302,6 +363,10 @@
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
+    font-size: 10px;
+}
+body.dark-theme .tooltip {
+    background-color: var(--dark-blue);
 }
 
 .tooltip::after {
@@ -320,7 +385,7 @@
 }
 
 .student-card-body {
-    padding: 15px;
+    padding: 12px;
 }
 
 .student-card-actions {
@@ -337,7 +402,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: var(--primary);
+    background-color: var(--white);
     color: var(--white);
     border: none;
     display: flex;
@@ -347,6 +412,10 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
     z-index: 99;
+}
+body.dark-theme .scroll-to-bottom{
+    background:var(--dark-black);
+    color: var(--dark-blue2);
 }
 
 .scroll-to-bottom:hover {

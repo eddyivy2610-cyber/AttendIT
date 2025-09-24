@@ -5,32 +5,42 @@
     overflow-y: auto;
     background-color: var(--gray);
 }
+body.dark-theme .main-content {
+    background: var(--dark-black2);
+}
+
 
 .content-wrapper {
     display: flex;
     flex: 1;
     overflow: hidden;
-    height: calc(100vh - 130px); /* 60px topbar + 70px page header */
+    height: calc(100vh - 130px); 
 }
 
 .main-content {
     flex: 2;
     padding: 20px;
     overflow-y: auto;
-    background-color: var(--gray);
+    background-color: var(--bg-blue);
     height: 100%;
+    scrollbar-color: var(--blue2);
 }
 
 .right-sidebar {
     flex: 1;
     max-width: 350px;
-    padding: 20px;
+    padding: 10px;
     overflow-y: auto;
     background-color: var(--gray);
     height: 100%;
     scrollbar-width: thin;
     scrollbar-color: var(--primary) var(--gray);
 }
+body.dark-theme .right-sidebar {
+    background-color: var(--dark-black);
+     scrollbar-color: var(--blue) var(--blue2);
+}
+
 
 .right-sidebar::-webkit-scrollbar {
     width: 8px;
@@ -39,7 +49,10 @@
 .right-sidebar::-webkit-scrollbar-track {
     background: var(--gray);
 }
-
+body.dark-theme .right-sidebar::-webkit-scrollbar-track{
+     background: var(--blue);
+     scrollbar-color: var(--blue) var(--blue2);
+}
 .right-sidebar::-webkit-scrollbar-thumb {
     background-color: var(--primary);
     border-radius: 4px;
@@ -50,18 +63,24 @@
     background: var(--white);
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    padding: 20px;
+    padding:  10px;
     margin-bottom: 20px;
+}
+body.dark-theme .reports-card{
+    background: var(--dark-black2);
 }
 
 .card-title {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 15px;
     color: var(--black1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+body.dark-theme .card-title{
+    color: var(--white);
 }
 
 .chart-container {
@@ -75,18 +94,23 @@
     justify-content: space-between;
     gap: 15px;
     margin-top: 20px;
+   
 }
 
 .attendance-item {
     flex: 1;
     text-align: center;
-    padding: 15px;
+    padding:  15px;
     border-radius: 8px;
     background-color: var(--gray);
+    width: 80px;
+}
+body.dark-theme .attendance-item {
+    background-color: var(--dark-black);
 }
 
 .attendance-count {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 5px;
 }
@@ -110,6 +134,9 @@
 
 .calendar {
     width: 100%;
+}
+.skillsChart.label{
+    color:white;
 }
 
 .calendar-header {
@@ -148,10 +175,16 @@
 .calendar-day:hover {
     background-color: var(--gray);
 }
+body.dark-theme .calendar-day:hover{
+    background-color: var(--blue2);
+}
 
 .calendar-day.today {
     background-color: var(--primary);
     color: var(--white);
+}
+body.dark-theme .calendar-day.today{
+    background-color: var(--dark-blue2);
 }
 
 .calendar-day.other-month {
@@ -215,6 +248,9 @@
     font-weight: 500;
     color: var(--black1);
 }
+body.dark-theme .form-label{
+    color: var(--white);
+}
 
 .rating-input {
     width: 100%;
@@ -260,7 +296,7 @@
 .submit-rating-btn {
     width: 100%;
     padding: 12px;
-    background-color: var(--primary);
+    background-color: var(--blue);
     color: var(--white);
     border: none;
     border-radius: 5px;
@@ -282,7 +318,7 @@
 
 .export-btn, .send-btn {
     flex: 1;
-    background-color: var(--primary);
+    background-color: var(--blue);
     color: var(--white);
     border: none;
     padding: 12px;
@@ -331,31 +367,39 @@
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
+body.dark-theme .student-profile{
+    background: var(--dark-black2);
+}
 
 .student-avatar {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--gray);
 }
-
+body.dark-theme .student-avatar{
+    border: 4px solid var(--blue2);
+}
 .student-info {
     flex: 1;
 }
 
 .student-info h2 {
-    font-size: 24px;
+    font-size: 16px;
     margin-bottom: 5px;
     color: var(--black1);
     display: flex;
     align-items: center;
     gap: 15px;
 }
+body.dark-theme .student-info h2{
+     color: var(--white);
+}
 
 .student-info .student-position {
-    color: var(--primary);
-    font-size: 18px;
+    color: var(--blue);
+    font-size: 13px;
     margin-bottom: 15px;
 }
 
@@ -389,9 +433,17 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    height: calc(100% - 320px); /* Adjust based on other content */
+    height: calc(100% - 320px); 
 }
-
+body.dark-theme .student-list-card {
+    background: var(--dark-black2);
+}
+.student-list-card .card-header{
+    padding: 15px;
+}
+body.dark-theme .student-list-card .card-title{
+    color: var(--grey);
+}
 .student-table-container {
     overflow-y: auto;
     height: 100%;
@@ -408,16 +460,33 @@
     text-align: left;
     font-weight: 600;
     color: var(--black1);
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     position: sticky;
     top: 0;
+   
+}
+body.dark-theme .student-table th {
+    background-color: var(--black) !important;
+    color: var(--white);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+body.dark-theme .student-table tr:hover{
+    background: var(--dark-blue);
 }
 
 .student-table td {
     padding: 15px;
-    border-bottom: 1px solid var(--gray);
+    font-size: small;
 }
 
 .student-table tr:last-child td {
@@ -432,11 +501,14 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    font-size: small;
 }
-
+body.dark-theme .student-fullname{
+    color: var(--white) ;
+}
 .student-avatar-small {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -444,6 +516,7 @@
 .student-details-small {
     display: flex;
     flex-direction: column;
+
 }
 
 .student-fullname {
@@ -457,18 +530,18 @@
 }
 
 .view-profile-btn {
-    background-color: var(--primary);
+    background-color: var(--blue);
     color: var(--white);
     border: none;
-    padding: 8px 16px;
+    padding: 6px 8px !important;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 10px;
     transition: background-color 0.3s;
 }
 
 .view-profile-btn:hover {
-    background-color: #2980b9;
+    background-color: var(--blue2);
 }
 
 /* Tabs for student profile */
@@ -477,24 +550,29 @@
     border-bottom: 1px solid var(--gray);
     margin-bottom: 20px;
 }
+body.dark-theme .profile-tabs{
+    border:none;
+}
+
 
 .profile-tab {
-    padding: 10px 20px;
+    padding: 10px 15px;
     background: none;
     border: none;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
     color: var(--black2);
     transition: all 0.3s;
+    
 }
 
 .profile-tab:hover {
-    color: var(--primary);
+    color: var(--blue);
 }
 
 .profile-tab.active {
-    color: var(--primary);
-    border-bottom: 3px solid var(--primary);
+    color: var(--blue);
+    border-bottom: 3px solid var(--blue);
 }
 
 .tab-content {
@@ -518,14 +596,18 @@
 }
 
 .info-label {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--black2);
     font-weight: 500;
 }
 
 .info-value {
-    font-size: 16px;
+    font-size: 12px;
     color: var(--black1);
+    font-weight: bold;
+}
+body.dark-theme .info-value{
+    color:var(--white);
 }
 
 /* Responsive */
